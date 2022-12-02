@@ -6,6 +6,10 @@ The main aim of this project is prediction of the advertisement click using the 
 ### Dataset
 The dataset comes from Kaggle and can be find [here](https://www.kaggle.com/datasets/arashnic/ctr-in-advertisement).
 
+## Project contains:
+- Exploratory Data Analysis of Ad click data - **Ad_click_EDA.ipynb**
+- Advertisement click prediction with ML algorithms - **Ad_click_prediction.ipynb**
+
 ## Technologies
 
 The project is created with:
