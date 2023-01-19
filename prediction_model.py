@@ -13,6 +13,7 @@ label_encoder = LabelEncoder()
 
 
 def load_model():
+    '''Loading pretrained model'''
     with open(MODELSPATH, 'rb') as file:
         model = load(file)
         return model
@@ -39,6 +40,7 @@ def data_transformation(data):
 
 
 def read_data(path):
+    '''Function to read data'''
     data = pd.read_csv(path)
     df = data_transformation(data)
     return df
