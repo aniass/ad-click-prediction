@@ -19,7 +19,7 @@ The higher CTR shows more interest in that specific campaign, while a lower one 
 
 ## Technologies
 
-The project is created with:
+**The project is created with:**
 
 - Python 3.6
 - libraries: pandas, numpy, scikit-learn, seaborn, matplotlib, imbalanced-learn.
@@ -27,3 +27,8 @@ The project is created with:
 **Running the project:**
 
 To run this project use Jupyter Notebook or Google Colab.
+
+You can run the scripts in the terminal:
+
+    prediction_model.py
+     
