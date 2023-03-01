@@ -15,10 +15,14 @@ The higher CTR shows more interest in that specific campaign, while a lower one 
 ## Project contains:
 - Exploratory Data Analysis of Ad click data - **Ad_click_EDA.ipynb**
 - Advertisement click prediction with ML algorithms - **Ad_click_prediction.ipynb**
+- Python script to generate predictions from trained model - **prediction_model.py**
+
+## Summary
+The project includes prediction of the advertisement click using machine learning methods. Based on historical data of the advertisement clicks (user behaviour, user profile, etc.) I have made a model to predict who is going to click ad on a website in the future. I have started with data analysis to better meet them. Then I have cleaned data and prepared them to the modelling (such as feature engineering). Because the target class variable was imbalanced, I have used the SMOTE method to resolve this problem in data. Next I have applied six different classification algorithms like: Logistic Regression, Linear SVC, Decision Tree, Random Forest and AdaBoost. I evaluated models with a few methods to check which model is the best. I used a accuracy score, f1 score and confusion matrix. Finally the best model was AdaBoost classifier with F1 score of 0.89 and accuracy score of 90%. This model has achaived the best result both in F1 score and accuracy score and this is signalling the characteristics of a reasonably good model with comparision to the others. Additionaly I prepared predictions on the test data with our best trained model i.e. AdaBoost.
 
 ## Technologies
 
-The project is created with:
+**The project is created with:**
 
 - Python 3.6
 - libraries: pandas, numpy, scikit-learn, seaborn, matplotlib, imbalanced-learn.
@@ -26,3 +30,8 @@ The project is created with:
 **Running the project:**
 
 To run this project use Jupyter Notebook or Google Colab.
+
+You can run the scripts in the terminal:
+
+    prediction_model.py
+     
