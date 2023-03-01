@@ -6,9 +6,8 @@ import warnings
 warnings.simplefilter('ignore')
 
 
-URL = '\Data\Ad_Click_prediciton_test.csv'
 MODELSPATH = '\models\adaboost_model.pkl'
-
+URL = '\Data\Ad_Click_prediciton_test.csv'
 label_encoder = LabelEncoder()
 
 
@@ -29,7 +28,7 @@ def clean_data(df):
 
 
 def data_transformation(data):
-    '''Filling missing values and convert non numeric values '''
+    '''Filling missing values and convert non numeric values'''
     df = clean_data(data)
     df = df.assign(city_development_index = df.city_development_index.fillna('0'),
                    product_category_2 = df.product_category_2.fillna("0"),
