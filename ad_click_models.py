@@ -1,4 +1,3 @@
-# Load libraries
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
@@ -31,7 +30,7 @@ def clean_data(df):
 
 
 def data_transformation(data):
-    '''Filling missing values and convert non numeric values '''
+    '''Filling missing values and convert non numeric values'''
     df = clean_data(data)
     df = df.assign(city_development_index = df.city_development_index.fillna('0'),
                    product_category_2 = df.product_category_2.fillna("0"),
@@ -42,13 +41,14 @@ def data_transformation(data):
 
 
 def read_data(path):
+    '''Read and preprocess data'''
     data = pd.read_csv(path)
     df = data_transformation(data)
     return df
 
 
 def splitting_data(data):
-    '''Spliting data into train and test set '''
+    '''Spliting data into train and test set'''
     X = np.array(data.drop(['is_click'],1))
     y = np.array(data['is_click'])
     skf = StratifiedShuffleSplit(n_splits=5, test_size=.25, random_state=0)
@@ -67,15 +67,16 @@ def f_score(model):
 
 
 def train_models(X_train, X_test, y_train, y_test):
-     models = pd.DataFrame()
-     classifiers = [
+    ''' Calculating models with score'''
+    models = pd.DataFrame()
+    classifiers = [
         LogisticRegression(penalty='l2', C=0.01, random_state=0),
         LinearSVC(random_state=0),
         DecisionTreeClassifier(max_depth=2, criterion='entropy', random_state=20),
         RandomForestClassifier(max_depth=5, n_estimators=200, criterion='entropy', random_state=0),
         AdaBoostClassifier(n_estimators=200 ,random_state=0)]
      
-     for classifier in classifiers:
+    for classifier in classifiers:
         model = imbpipeline(steps=[('scaler', MinMaxScaler()),
                                     ('smote', SMOTE()),
                                     ('classifier', classifier)])
@@ -87,8 +88,8 @@ def train_models(X_train, X_test, y_train, y_test):
                      }
         models = models.append(pd.DataFrame(param_dict, index=[0]))
         
-     models.reset_index(drop=True, inplace=True)
-     print(models.sort_values(by='F1 score', ascending=False))
+    models.reset_index(drop=True, inplace=True)
+    print(models.sort_values(by='F1 score', ascending=False))
 
 
 if __name__ == '__main__':
