@@ -15,6 +15,7 @@ The higher CTR shows more interest in that specific campaign, while a lower one 
 ## Project contains:
 - Exploratory Data Analysis of Ad click data - **Ad_click_EDA.ipynb**
 - Advertisement click prediction with ML algorithms - **Ad_click_prediction.ipynb**
+- Python script to train ML models - **ad_click_models.py**
 - Python script to generate predictions from trained model - **prediction_model.py**
 
 ## Summary
