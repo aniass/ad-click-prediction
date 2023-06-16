@@ -35,4 +35,5 @@ To run this project use Jupyter Notebook or Google Colab.
 You can run the scripts in the terminal:
 
     prediction_model.py
+    ad_click_models.py
      
