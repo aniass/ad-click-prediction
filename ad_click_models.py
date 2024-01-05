@@ -19,7 +19,7 @@ label_encoder = LabelEncoder()
 
 
 def clean_data(df):
-    '''Deleting missing data, feature engineering for date time features'''
+    '''Delete missing data, feature engineering for date time features'''
     df = df.dropna(subset=['gender','age_level', 'user_group_id', 'user_depth'])
     df['DateTime'] = pd.to_datetime(df['DateTime'], errors='coerce')
     df = df.assign(hour = df.DateTime.dt.hour,
@@ -28,7 +28,7 @@ def clean_data(df):
 
 
 def data_transformation(data):
-    '''Filling missing values and convert non numeric values'''
+    '''Fill missing values and convert non-numeric values'''
     df = clean_data(data)
     df = df.assign(city_development_index = df.city_development_index.fillna('0'),
                    product_category_2 = df.product_category_2.fillna("0"),
@@ -46,7 +46,7 @@ def read_data(path):
 
 
 def splitting_data(data):
-    '''Spliting data into train and test set'''
+    '''Split data into train and test set'''
     X = np.array(data.drop(['is_click'], 1))
     y = np.array(data['is_click'])
     skf = StratifiedShuffleSplit(n_splits=5, test_size=.25, random_state=0)
@@ -65,7 +65,7 @@ def f_score(model, X_test, y_test):
 
 
 def train_models(X_train, X_test, y_train, y_test):
-    ''' Calculating models with score'''
+    ''' Calculate models with score'''
     models = pd.DataFrame()
     classifiers = [
         LogisticRegression(penalty='l2', C=0.01, random_state=0),
