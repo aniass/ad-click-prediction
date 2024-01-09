@@ -40,7 +40,11 @@ def data_transformation(data):
 
 def read_data(path):
     '''Read and preprocess data'''
-    data = pd.read_csv(path)
+    try:
+        data = pd.read_csv(path)
+    except FileNotFoundError:
+        print(f"Error: File not found at {path}")
+        return None
     df = data_transformation(data)
     return df
 
@@ -88,10 +92,12 @@ def train_models(X_train, X_test, y_train, y_test):
         models = models.append(pd.DataFrame(param_dict, index=[0]))
         
     models.reset_index(drop=True, inplace=True)
-    print(models.sort_values(by='F1 score', ascending=False))
+    models_sorted = models.sort_values(by='F1 score', ascending=False)
+    return models_sorted
 
 
 if __name__ == '__main__':
     df = read_data(URL)
     X_train, X_test, y_train, y_test = splitting_data(df)
-    train_models(X_train, X_test, y_train, y_test)
+    result_models = train_models(X_train, X_test, y_train, y_test)
+    print(result_models)
