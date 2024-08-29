@@ -61,7 +61,7 @@ def splitting_data(data):
 
 
 def f_score(model, X_test, y_test):
-    """F1 score calculation"""
+    '''F1 score calculation'''
     y_pred = model.predict(X_test)
     score = f1_score(y_test, y_pred, average='weighted')
     score = round(score, 3)
@@ -69,7 +69,7 @@ def f_score(model, X_test, y_test):
 
 
 def train_models(X_train, X_test, y_train, y_test):
-    ''' Calculate models with score'''
+    '''Calculate models with score'''
     models = pd.DataFrame()
     classifiers = [
         LogisticRegression(penalty='l2', C=0.01, random_state=0),
