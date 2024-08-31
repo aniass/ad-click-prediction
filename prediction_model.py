@@ -51,9 +51,10 @@ def get_prediction(test):
     model = load_model(MODELSPATH)
     predicted = model.predict(test_X)
     test['click_prediction'] = predicted
-    print(test.head())
+    return test
 
 
 if __name__ == '__main__':
     data = read_data(URL)
-    get_prediction(data)
+    result = get_prediction(data)
+    print(result.head())
