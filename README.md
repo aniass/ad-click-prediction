@@ -12,8 +12,8 @@ The internet marketing is an important part of marketing strategies. The compani
 Nowadays, different types of advertisers and search engines rely on modeling to predict ad CTR (i.e. click-through rate) accurately. The higher CTR shows more interest in that specific campaign, while a lower one indicates that this ad may not be as relevant. High CTR is important because shows that more people are clicking to the website. It also helps to get beter ad position for less money on online platformas such as Google etc.
 
 ## Project contains:
-- Exploratory Data Analysis of Ad click data - **Ad_click_EDA.ipynb**
-- Advertisement click prediction with ML algorithms - **Ad_click_prediction.ipynb**
+- **Part 1: Exploratory Data Analysis of Ad click data** - Ad_click_EDA.ipynb
+- **Part 2: Advertisement click prediction with ML algorithms** - Ad_click_prediction.ipynb
 - Python script to train ML models - **ad_click_models.py**
 - Python script to generate predictions from trained model - **prediction_model.py**
 
