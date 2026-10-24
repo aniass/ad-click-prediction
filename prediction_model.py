@@ -41,8 +41,7 @@ def data_transformation(data):
 def read_data(path):
     '''Read data and perform data transformation'''
     data = pd.read_csv(path)
-    df = data_transformation(data)
-    return df
+    return data_transformation(data)
 
 
 def get_prediction(test):
